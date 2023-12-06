@@ -35,3 +35,7 @@ k3d is a tool for running Kubernetes clusters on a local machine using Docker. I
 ## DEMO
 
 [k3d demo](https://asciinema.org/a/625415)
+
+## Conclusion
+
+With k3d you can easily create single and multi-node k3s clusters for seamless local development and testing on Kubernetes. By running in Kubernetes, k3d also helps you to scale your workload up and down without more effort.
