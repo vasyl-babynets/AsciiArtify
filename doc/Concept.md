@@ -32,6 +32,6 @@ k3d is a tool for running Kubernetes clusters on a local machine using Docker. I
 | Resource usage | Minikube  uses more resources than KinD, but it still use relatively little compared to a production-level Kubernetes cluster. | KinD uses Docker containers to simulate a Kubernetes cluster, which means it uses less resources than Minikube and k3d. This makes it a great choice for developers who have limited resources on their local machine. | k3d uses more resources than KinD, but it still use relatively little compared to a production-level Kubernetes cluster. |
 | Compatibility | Minikube is designed to work with a wide range of platforms, including Windows, macOS, and Linux. However, it can be more difficult to get it working on some platforms than others. | KinD is designed to work with Docker, which means it can run on any platform that supports Docker. This makes it a great choice for developers who use Docker as their primary containerization tool. | k3d is also designed to work with Docker, and it can run on any platform that supports Docker. Additionally, k3d is designed to be lightweight, so it may be a better choice for developers who have limited resources on their local machine. |
 
-##DEMO
+## DEMO
 
 [k3d demo](https://asciinema.org/a/625415)
