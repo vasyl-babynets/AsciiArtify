@@ -1,4 +1,4 @@
-### kubeplugin
+## kubeplugin
 
 This is a kubectl plugin that retrieves resource usage statistics from Kubernetes.
 
