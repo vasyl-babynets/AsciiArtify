@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# Define command-line arguments
+
+RESOURCE_TYPE=$1
+NAMESPACE=$2
+
+# Retrieve resource usage statistics from Kubernetes and output the statistics to the console
+
+if [[ $# -lt 2 ]]
+then
+  echo "type: kubectl kubeplugin ['node' or 'pod'] [namespace]"
+elif [[ $RESOURCE_TYPE == "node" ]]
+then
+  printf "Resource: %s\nNamespace: %s\n\n" "$RESOURCE_TYPE" "$NAMESPACE"
+  kubectl top $RESOURCE_TYPE -n $NAMESPACE | tail -n +2| awk 'NR==1 { print  "Name", "CPU", "Memory" }{ print $1 "\t" $2 "\t" $4 }' |  column -t
+elif [[ $RESOURCE_TYPE == "pod" ]]
+then
+  printf "Resource: %s\nNamespace: %s\n\n" "$RESOURCE_TYPE" "$NAMESPACE"
+  kubectl top $RESOURCE_TYPE -n $NAMESPACE | tail -n +2| awk 'NR==1 { print  "Name", "CPU", "Memory" }{ print $1 "\t" $2 "\t" $3 }' |  column -t
+else
+  echo "type: kubectl kubeplugin ['node' or 'pod'] [namespace]"
+fi
